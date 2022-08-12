@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-info bg-light">
-  
+   {% if app.user %}
   <a class="navbar-brand" href="{{ path('app_home') }}">Ecommerce</a>
   
   <button
@@ -26,7 +26,7 @@
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item" href="{{ path('app_profil') }}">Profil</a></li>
         <li><a class="dropdown-item" href="{{ path('app_admin') }}">Back office</a></li>
-        <li><a class="dropdown-item" href="#">membres</a></li>
+        <li><a class="dropdown-item" href="#">produits</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="#"></a></li>
       </ul>
@@ -40,6 +40,7 @@
         <a class="nav-link" href="#"
           ></a
         >
+        {% else %}
 
 
       
@@ -53,8 +54,8 @@
           >login</a
         >
 
-        {% if app.user %}
-         {% else %}
+        
+        
       {% endif %}
     </ul>
   </div>
